@@ -61,7 +61,6 @@ class galera (
     ensure  => present,
     content => template('galera/wsrep.cnf.erb'),
     require => Package['galera'],
-    notify  => Class['::mysql::server::service'],
   }
 
   # needed for setting progress=1 under [sst] in the galera config file
